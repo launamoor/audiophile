@@ -1,0 +1,50 @@
+.header {
+  background-color: #141414;
+}
+
+.container {
+  max-width: 75vw;
+  margin: 0 auto;
+  padding: 3.2rem 0;
+}
+
+.headerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 3.4rem;
+}
+
+.navButton {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: bold;
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 25px;
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+.navButton:hover {
+  color: #d87d4a;
+}
+
+.cartButton {
+  display: inline-block;
+  background-color: inherit;
+  border: none;
+
+  cursor: pointer;
+}

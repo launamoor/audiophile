@@ -1,0 +1,14 @@
+.outerWrapper {
+  margin-bottom: 16.8rem;
+}
+
+.container {
+  max-width: 75vw;
+  margin: 0 auto;
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

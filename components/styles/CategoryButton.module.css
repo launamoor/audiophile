@@ -1,0 +1,58 @@
+.button {
+  background-color: inherit;
+  border: none;
+  font-family: inherit;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+  min-height: 20rem;
+  min-width: 35rem;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  position: relative;
+}
+
+.buttonFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.buttonShop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.buttonImgDiv {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+}
+
+.buttonImg {
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.button:hover .buttonImg {
+  transform: scale(1.05);
+}
+
+.button:hover .buttonShop {
+  color: #d87d4a;
+}

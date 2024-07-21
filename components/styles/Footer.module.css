@@ -1,0 +1,112 @@
+.outerWrapper {
+  background-color: #101010;
+  padding-top: 7.5rem;
+}
+
+.container {
+  max-width: 75vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3.6rem;
+}
+
+.navigationFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.4rem;
+}
+
+.navButton {
+  display: inline-block;
+  font-family: inherit;
+  background-color: inherit;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 25px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  color: #d87d4a;
+}
+
+.descriptionDiv,
+.copyrightDiv {
+  width: 50%;
+}
+
+.descriptionDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.copyrightDiv {
+  margin-top: 2rem;
+  margin-bottom: 4.8rem;
+}
+
+.description,
+.copyright {
+  font-size: 1.5rem;
+  font-weight: medium;
+  line-height: 25px;
+  letter-spacing: 0;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.description {
+  width: 43%;
+}
+
+.socialNav {
+  align-self: flex-end;
+}
+
+.socialNavList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+}
+
+.socialButton {
+  display: inline-block;
+  background-color: inherit;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.socialButton img {
+  transition: all 0.2s ease;
+}
+
+.socialButton:hover img {
+  transform: scale(1.1);
+}

@@ -1,0 +1,44 @@
+.outerWrapper {
+  margin-bottom: 20rem;
+  min-height: 59rem;
+}
+
+.container {
+  max-width: 75vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12.5rem;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3.2rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 25px;
+  font-weight: medium;
+  color: #000;
+  opacity: 0.5;
+  width: 78%;
+}
+
+.imgDiv {
+  min-width: 54rem;
+  min-height: 59rem;
+  border-radius: 8px;
+  background-image: url("../../assets/images/shared/desktop/image-best-gear.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
