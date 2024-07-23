@@ -1,5 +1,6 @@
 import "@/assets/styles/global.css";
 import Navbar from "@/components/Navbar";
+import DescriptionSection from "@/components/DescriptionSection";
 import Footer from "@/components/Footer";
 
 import React from "react";
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
       <body>
         <Navbar />
         <main>{children}</main>
+        <DescriptionSection />
         <Footer />
       </body>
     </html>

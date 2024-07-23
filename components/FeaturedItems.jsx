@@ -11,9 +11,9 @@ const FeaturedItems = () => {
         <div className={styles.innerWrapper}>
           <div className={styles.zxspeakerOuterWrapper}>
             <div className={styles.circlesDiv}>
-              <Image className={styles.circles} src={circles} />
+              <Image className={styles.circles} src={circles} alt="Circles" />
               <div className={styles.circlesSpeaker}>
-                <Image src={speaker} />
+                <Image src={speaker} alt="Speaker" />
               </div>
             </div>
             <div className={styles.zxspeakerInnerWrapper}>

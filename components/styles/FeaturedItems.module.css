@@ -3,7 +3,7 @@
 }
 
 .container {
-  max-width: 75vw;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
@@ -100,9 +100,7 @@
 }
 
 .zxspeakerButton:hover {
-  background-color: inherit;
-  border: 1px solid #000;
-  color: #000;
+  background-color: #4c4c4c;
 }
 
 .zxspeakerButton:active {

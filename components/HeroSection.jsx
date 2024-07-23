@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "@/components/styles/HeroSection.module.css";
-import Image from "next/image";
-import heroImage from "@/public/images/home/desktop/image-hero-exported.jpg";
 
 const HeroSection = () => {
   return (
@@ -16,13 +14,6 @@ const HeroSection = () => {
               made for the passionate music enthusiast.
             </p>
             <button className={styles.heroButton}>See Product</button>
-          </div>
-          <div className={styles.heroImgDiv}>
-            <Image
-              className={styles.heroImg}
-              src={heroImage}
-              alt="Headphones"
-            />
           </div>
         </div>
       </div>

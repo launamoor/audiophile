@@ -12,7 +12,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.innerWrapper}>
           <div className={styles.navigationFlex}>
-            <Image src={logo} />
+            <Image src={logo} alt="Logo" />
             <nav>
               <ul className={styles.navList}>
                 <li>
@@ -41,17 +41,17 @@ const Footer = () => {
               <ul className={styles.socialNavList}>
                 <li>
                   <button className={styles.socialButton}>
-                    <Image src={facebookLogo} />
+                    <Image src={facebookLogo} alt="Facebook logo" />
                   </button>
                 </li>
                 <li>
                   <button className={styles.socialButton}>
-                    <Image src={instagramLogo} />
+                    <Image src={instagramLogo} alt="Instagram logo" />
                   </button>
                 </li>
                 <li>
                   <button className={styles.socialButton}>
-                    <Image src={twitterLogo} />
+                    <Image src={twitterLogo} alt="Twitter logo" />
                   </button>
                 </li>
               </ul>

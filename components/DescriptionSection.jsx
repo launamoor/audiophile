@@ -7,7 +7,7 @@ const DescriptionSection = () => {
       <div className={styles.container}>
         <div className={styles.innerWrapper}>
           <div className={styles.textbox}>
-            <h2>
+            <h2 className={styles.title}>
               Bringing you the <span style={{ color: "#D87D4A" }}>best</span>{" "}
               audio gear
             </h2>

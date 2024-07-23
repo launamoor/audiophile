@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 75vw;
+  max-width: 120rem;
   margin: 0 auto;
   padding: 0;
 }
@@ -24,13 +24,17 @@
   gap: 3.2rem;
 }
 
+.title {
+  width: 80%;
+}
+
 .description {
   font-size: 1.5rem;
   line-height: 25px;
   font-weight: medium;
   color: #000;
   opacity: 0.5;
-  width: 78%;
+  width: 80%;
 }
 
 .imgDiv {
