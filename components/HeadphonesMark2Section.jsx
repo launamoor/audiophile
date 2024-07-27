@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
 import styles from "@/components/styles/HeadphonesMark2Section.module.css";
 import ProductFlex from "./ProductFlex";
-import markTwoHeadphones from "@/public/images/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import markOneHeadphones from "@/public/images/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-import xxHeadphones from "@/public/images/product-xx59-headphones/desktop/image-product.jpg";
+import { requestProducts } from "@/utils/requests";
 
 const HeadphonesMark2Section = () => {
+  const products = requestProducts();
+  const headphones = products.filter(
+    (product) => product.category === "headphones"
+  );
   return (
     <>
       <div className={styles.titleOuterWrapper}>
@@ -19,29 +22,29 @@ const HeadphonesMark2Section = () => {
             <ProductFlex
               newProduct={true}
               order={1}
-              title={"XX99 Mark II Headphones"}
-              description={
-                "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-              }
-              imagePath={markTwoHeadphones}
+              title={headphones[2].name}
+              description={headphones[2].description}
+              imagePath={headphones[2].image.desktop}
+              seeProductButton={true}
+              productNumber={headphones[2].id}
             />
             <ProductFlex
               newProduct={false}
               order={0}
-              title={"XX99 Mark I Headphones"}
-              description={
-                "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go."
-              }
-              imagePath={markOneHeadphones}
+              title={headphones[1].name}
+              description={headphones[1].description}
+              imagePath={headphones[1].image.desktop}
+              seeProductButton={true}
+              productNumber={headphones[1].id}
             />
             <ProductFlex
               newProduct={false}
               order={1}
-              title={"XX59 Headphones"}
-              description={
-                "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move."
-              }
-              imagePath={xxHeadphones}
+              title={headphones[0].name}
+              description={headphones[0].description}
+              imagePath={headphones[0].image.desktop}
+              seeProductButton={true}
+              productNumber={headphones[0].id}
             />
           </div>
         </div>

@@ -1,9 +1,11 @@
 .header {
   background-color: #111;
+  position: relative;
+  z-index: 9999;
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 111rem;
   margin: 0 auto;
   padding: 3.2rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);

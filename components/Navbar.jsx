@@ -6,9 +6,19 @@ import logo from "@/assets/images/shared/desktop/logo.svg";
 import cartIcon from "@/assets/images/shared/desktop/icon-cart.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { cartOpen, openCart, closeCart, cartItems } = useCart();
+
+  const handleToggleCart = () => {
+    if (cartOpen) {
+      closeCart();
+    } else {
+      openCart();
+    }
+  };
 
   return (
     <header
@@ -41,7 +51,7 @@ const Navbar = () => {
               </li>
             </ul>
           </nav>
-          <button className={styles.cartButton}>
+          <button onClick={handleToggleCart} className={styles.cartButton}>
             <Image src={cartIcon} alt="Cart Icon" priority />
           </button>
         </div>

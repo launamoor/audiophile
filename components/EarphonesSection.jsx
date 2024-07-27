@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "@/components/styles/EarphonesSection.module.css";
 import ProductFlex from "./ProductFlex";
-import yx1Earphones from "@/public/images/product-yx1-earphones/desktop/image-product.jpg";
+import { requestProducts } from "@/utils/requests";
 
 const EarphonesSection = () => {
+  const products = requestProducts();
+  const earphones = products.filter(
+    (product) => product.category === "earphones"
+  );
   return (
     <div>
       <div className={styles.titleOuterWrapper}>
@@ -17,11 +21,11 @@ const EarphonesSection = () => {
             <ProductFlex
               newProduct={true}
               order={1}
-              title={"YX1 Wireless Earphones"}
-              description={
-                "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature."
-              }
-              imagePath={yx1Earphones}
+              title={earphones[0].name}
+              description={earphones[0].description}
+              imagePath={earphones[0].image.desktop}
+              seeProductButton={true}
+              productNumber={earphones[0].id}
             />
           </div>
         </div>

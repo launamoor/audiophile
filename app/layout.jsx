@@ -2,6 +2,7 @@ import "@/assets/styles/global.css";
 import Navbar from "@/components/Navbar";
 import DescriptionSection from "@/components/DescriptionSection";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 import React from "react";
 
@@ -14,10 +15,12 @@ const MainLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <DescriptionSection />
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <main>{children}</main>
+          <DescriptionSection />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

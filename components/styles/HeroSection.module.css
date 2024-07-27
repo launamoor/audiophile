@@ -13,7 +13,7 @@
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 111rem;
   margin: 0 auto;
   padding: 0;
 }
@@ -58,7 +58,8 @@
   width: 60%;
 }
 
-.heroButton {
+.heroButton:link,
+.heroButton:visited {
   display: inline-block;
   padding: 1.5rem 3rem;
   text-transform: uppercase;
@@ -68,6 +69,7 @@
   letter-spacing: 1px;
   color: #fff;
   background-color: #d87d4a;
+  text-decoration: none;
   border: none;
 
   cursor: pointer;

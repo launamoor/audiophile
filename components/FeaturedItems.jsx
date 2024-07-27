@@ -3,6 +3,7 @@ import styles from "@/components/styles/FeaturedItems.module.css";
 import circles from "@/public/images/home/desktop/pattern-circles.svg";
 import speaker from "@/public/images/home/desktop/image-speaker-zx9.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const FeaturedItems = () => {
   return (
@@ -23,21 +24,27 @@ const FeaturedItems = () => {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
-                <button className={styles.zxspeakerButton}>See Product</button>
+                <Link href={"/product/6"} className={styles.zxspeakerButton}>
+                  See Product
+                </Link>
               </div>
             </div>
           </div>
           <div className={styles.zx7speakerOuterWrapper}>
             <div className={styles.zx7speakerTextbox}>
               <h4>ZX7 Speaker</h4>
-              <button className={styles.zx7speakerButton}>See Product</button>
+              <Link href={"product/5"} className={styles.zx7speakerButton}>
+                See Product
+              </Link>
             </div>
           </div>
           <div className={styles.earphonesOuterWrapper}>
             <div className={styles.earphonesImage}></div>
             <div className={styles.earphonesTextbox}>
               <h4>YX1 Earphones</h4>
-              <button className={styles.zx7speakerButton}>See Product</button>
+              <Link href={"product/1"} className={styles.zx7speakerButton}>
+                See Product
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/components/styles/HeroSection.module.css";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -13,7 +14,9 @@ const HeroSection = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className={styles.heroButton}>See Product</button>
+            <Link href={`product/4`} className={styles.heroButton}>
+              See Product
+            </Link>
           </div>
         </div>
       </div>
