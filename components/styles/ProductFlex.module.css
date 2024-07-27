@@ -141,8 +141,10 @@
 }
 
 .addToCartButton:disabled,
-.addToCartButton[disabled] {
-  background-color: red;
+.addToCartButton[disabled],
+.addToCartButton:disabled:hover,
+.addToCartButton[disabled]:hover {
+  background-color: #fbae857c;
 }
 
 .addToCartButton:hover {

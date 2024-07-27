@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/components/styles/ProductFlex.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,29 +16,32 @@ const ProductFlex = ({
   cart,
   price,
   productNumber,
-  itemQuantity,
   handleIncreaseQuantity,
   handleDecreaseQuantity,
   addToCart,
+  cartItems,
   product,
+  itemQuantity,
 }) => {
   const handleAddToCart = () => {
-    addToCart({
-      ...product,
-      cartQuantity: cartQuantity + itemQuantity,
-    });
-    toast.success("Item added to cart!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-      className: styles.toastStyle,
-    });
+    const itemToCart = {
+      id: product.id,
+      name: product.name,
+      image: product.cartImage,
+      price: product.price,
+      quantity: product.cartQuantity + itemQuantity,
+    };
+
+    if (cartItems.some((item) => item.id === product.id)) {
+      toast.info("Item already in cart!", {
+        className: styles.toastStyle,
+      });
+    } else {
+      addToCart(itemToCart);
+      toast.success("Item added to cart!", {
+        className: styles.toastStyle,
+      });
+    }
   };
 
   return (
@@ -84,7 +87,17 @@ const ProductFlex = ({
       <div className={styles.imageDiv}>
         <Image width={540} height={560} src={imagePath} alt={title} />
       </div>
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick={true}
+        pauseOnHover={false}
+        draggable={true}
+        progress={undefined}
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };

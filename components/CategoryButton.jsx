@@ -2,11 +2,11 @@ import React from "react";
 import styles from "@/components/styles/CategoryButton.module.css";
 import iconArrowRight from "@/assets/images/shared/desktop/icon-arrow-right.svg";
 import Image from "next/image";
-import headphones from "@/assets/images/shared/desktop/image-category-thumbnail-headphones.png";
+import Link from "next/link";
 
 const CategoryButton = ({ image, category }) => {
   return (
-    <button className={styles.button}>
+    <Link href={`/${category.toLowerCase()}`} className={styles.button}>
       <div className={styles.buttonFlex}>
         <div className={styles.buttonImgDiv}>
           <Image className={styles.buttonImg} src={image} alt={category} />
@@ -19,7 +19,7 @@ const CategoryButton = ({ image, category }) => {
           </span>
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 

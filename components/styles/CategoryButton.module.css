@@ -1,4 +1,6 @@
-.button {
+.button:link,
+.button:visited {
+  text-decoration: none;
   background-color: inherit;
   border: none;
   font-family: inherit;
@@ -8,6 +10,7 @@
   cursor: pointer;
   min-height: 20rem;
   min-width: 35rem;
+  color: #000;
   background-color: #f1f1f1;
   border-radius: 8px;
   position: relative;

@@ -4,7 +4,8 @@ import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 
 const Cart = () => {
-  const { closeCart, cartItems, removeAllItems } = useCart();
+  const { closeCart, cartItems, removeAllItems, updateCart, removeFromCart } =
+    useCart();
   console.log(cartItems);
 
   const getTotalPrice = () => {
@@ -15,12 +16,34 @@ const Cart = () => {
 
     return total;
   };
+
+  const increaseQuantity = (itemId) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    updateCart(updatedCartItems.find((item) => item.id === itemId));
+  };
+
+  const decreaseQuantity = (itemId) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+    );
+
+    if (
+      updatedCartItems.filter((item) => item.id === itemId)[0].quantity >= 1
+    ) {
+      updateCart(updatedCartItems.find((item) => item.id === itemId));
+    } else {
+      removeFromCart(itemId);
+    }
+  };
+
   return (
     <div id="overlay" onClick={closeCart} className={styles.overlay}>
       <div className={styles.outerWrapper}>
         <div className={styles.cartFlex}>
           <div className={styles.titleRow}>
-            <h6>Cart(3)</h6>
+            <h6>Cart({cartItems.length})</h6>
             <button onClick={removeAllItems} className={styles.removeButton}>
               Remove all
             </button>
@@ -32,7 +55,7 @@ const Cart = () => {
                   <div key={i} className={styles.itemRow}>
                     <div className={styles.thumbnail}>
                       <Image
-                        src={item.cartImage}
+                        src={item.image}
                         alt={item.name}
                         width={64}
                         height={64}
@@ -40,18 +63,26 @@ const Cart = () => {
                       />
                     </div>
                     <div className={styles.textbox}>
-                      <div className={styles.textboxTitle}>
-                        {item.name.slice(0, 12)}
-                      </div>
+                      <div className={styles.textboxTitle}>{item.name}</div>
                       <div className={styles.textboxPrice}>
                         ${new Intl.NumberFormat().format(item.price)}
                       </div>
                     </div>
                     <div className={styles.quantityInput}>
                       <div className={styles.addToCartInput}>
-                        <button className={styles.cartInputButton}>-</button>
+                        <button
+                          onClick={() => decreaseQuantity(item.id)}
+                          className={styles.cartInputButton}
+                        >
+                          -
+                        </button>
                         <div className={styles.quantity}>{item.quantity}</div>
-                        <button className={styles.cartInputButton}>+</button>
+                        <button
+                          onClick={() => increaseQuantity(item.id)}
+                          className={styles.cartInputButton}
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   </div>

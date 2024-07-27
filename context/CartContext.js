@@ -1,11 +1,27 @@
 "use client";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    return storedCartItems ? JSON.parse(storedCartItems) : [];
+  });
+
+  // Load cart items from local storage on initial mount
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
+  }, []);
+
+  // Update local storage whenever cartItems change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const openCart = () => setCartOpen(true);
 
@@ -15,8 +31,41 @@ export const CartProvider = ({ children }) => {
 
   const removeAllItems = () => setCartItems([]);
 
-  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
+  const addToCart = (itemToAdd) => {
+    const existingIndex = cartItems.findIndex(
+      (item) => item.id === itemToAdd.id
+    );
+
+    setCartItems((prevCartItems) => {
+      if (existingIndex !== -1) {
+        const updatedCartItems = [...prevCartItems];
+        updatedCartItems[existingIndex] = {
+          ...updatedCartItems[existingIndex],
+          quantity:
+            updatedCartItems[existingIndex].quantity + itemToAdd.quantity,
+        };
+        return updatedCartItems;
+      } else {
+        return [...prevCartItems, itemToAdd];
+      }
+    });
+  };
+
+  const updateCart = (itemToUpdate) => {
+    const existingIndex = cartItems.findIndex(
+      (item) => item.id === itemToUpdate.id
+    );
+
+    if (existingIndex !== -1) {
+      setCartItems((prevCartItems) => {
+        const updatedCartItems = [...prevCartItems];
+        updatedCartItems[existingIndex] = {
+          ...updatedCartItems[existingIndex],
+          quantity: itemToUpdate.quantity, // Update the quantity to the new value
+        };
+        return updatedCartItems;
+      });
+    }
   };
 
   const removeFromCart = (itemId) => {
@@ -31,6 +80,7 @@ export const CartProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     removeAllItems,
+    updateCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

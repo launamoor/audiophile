@@ -11,6 +11,7 @@ import Cart from "@/components/Cart";
 const ProductPage = () => {
   const { id } = useParams();
   const product = requestProduct(+id);
+
   const [itemQuantity, setItemQuantity] = useState(1);
 
   const handleIncreaseQuantity = () => {
@@ -20,7 +21,7 @@ const ProductPage = () => {
     if (itemQuantity > 1) setItemQuantity((prev) => prev - 1);
   };
 
-  const { cartOpen, addToCart } = useCart();
+  const { cartOpen, addToCart, cartItems } = useCart();
 
   return (
     <>
@@ -34,7 +35,6 @@ const ProductPage = () => {
         <ProductFlex
           handleIncreaseQuantity={handleIncreaseQuantity}
           handleDecreaseQuantity={handleDecreaseQuantity}
-          itemQuantity={itemQuantity}
           newProduct={product[0].new}
           order={1}
           title={product[0].name}
@@ -45,6 +45,8 @@ const ProductPage = () => {
           price={new Intl.NumberFormat().format(product[0].price)}
           product={product[0]}
           addToCart={addToCart}
+          cartItems={cartItems}
+          itemQuantity={itemQuantity}
         />
       </ProductSection>
       <CategoriesFlex />

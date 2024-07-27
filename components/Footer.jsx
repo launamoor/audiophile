@@ -5,6 +5,7 @@ import logo from "@/assets/images/shared/desktop/logo.svg";
 import facebookLogo from "@/assets/images/shared/desktop/icon-facebook.svg";
 import instagramLogo from "@/assets/images/shared/desktop/icon-instagram.svg";
 import twitterLogo from "@/assets/images/shared/desktop/icon-twitter.svg";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -16,16 +17,24 @@ const Footer = () => {
             <nav>
               <ul className={styles.navList}>
                 <li>
-                  <button className={styles.navButton}>Home</button>
+                  <Link href={"/"} className={styles.navButton}>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <button className={styles.navButton}>Headphones</button>
+                  <Link href={"/headphones"} className={styles.navButton}>
+                    Headphones
+                  </Link>
                 </li>
                 <li>
-                  <button className={styles.navButton}>Speakers</button>
+                  <Link href={"/speakers"} className={styles.navButton}>
+                    Speakers
+                  </Link>
                 </li>
                 <li>
-                  <button className={styles.navButton}>Earphones</button>
+                  <Link href={"/earphones"} className={styles.navButton}>
+                    Earphones
+                  </Link>
                 </li>
               </ul>
             </nav>
