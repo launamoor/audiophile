@@ -1,9 +1,15 @@
+"use client";
 import React from "react";
 import styles from "@/components/styles/DescriptionSection.module.css";
+import { usePathname } from "next/navigation";
 
 const DescriptionSection = () => {
+  const pathname = usePathname();
   return (
-    <section className={styles.outerWrapper}>
+    <section
+      style={{ display: `${pathname === "/checkout" ? "none" : "block"}` }}
+      className={styles.outerWrapper}
+    >
       <div className={styles.container}>
         <div className={styles.innerWrapper}>
           <div className={styles.textbox}>

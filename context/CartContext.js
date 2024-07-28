@@ -6,8 +6,10 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState(() => {
-    const storedCartItems = localStorage.getItem("cartItems");
-    return storedCartItems ? JSON.parse(storedCartItems) : [];
+    if (typeof window !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : [];
+    }
   });
 
   // Load cart items from local storage on initial mount
@@ -22,6 +24,24 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
+  // const [cartOpen, setCartOpen] = useState(false);
+  // const [cartItems, setCartItems] = useState([]);
+
+  // // Check if localStorage is available
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const storedCartItems = localStorage.getItem("cartItems");
+  //     setCartItems(storedCartItems ? JSON.parse(storedCartItems) : []);
+  //   }
+  // }, []);
+
+  // // Update local storage whenever cartItems change
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  //   }
+  // }, [cartItems]);
 
   const openCart = () => setCartOpen(true);
 

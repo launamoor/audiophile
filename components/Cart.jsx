@@ -2,11 +2,11 @@ import React from "react";
 import styles from "@/components/styles/Cart.module.css";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
+import Link from "next/link";
 
 const Cart = () => {
   const { closeCart, cartItems, removeAllItems, updateCart, removeFromCart } =
     useCart();
-  console.log(cartItems);
 
   const getTotalPrice = () => {
     let total = 0;
@@ -95,7 +95,13 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <button className={styles.checkoutButton}>Checkout</button>
+        <Link
+          onClick={() => closeCart()}
+          href={"/checkout"}
+          className={styles.checkoutButton}
+        >
+          Checkout
+        </Link>
       </div>
     </div>
   );

@@ -27,13 +27,16 @@
   margin-bottom: 2.4rem;
 }
 
-.checkoutButton {
+.checkoutButton:link,
+.checkoutButton:visited {
   display: inline-block;
   padding: 1.5rem 0;
   width: 100%;
   border: none;
   font-family: inherit;
   background-color: #d87d4a;
+  text-decoration: none;
+  text-align: center;
   color: #fff;
   text-transform: uppercase;
   font-size: 1.3rem;
