@@ -1,13 +1,22 @@
-"use client";
 import React from "react";
 import styles from "@/components/styles/PurchaseCompleted.module.css";
 import Image from "next/image";
 import tick from "@/public/images/checkout/icon-order-confirmation.svg";
 import { useCart } from "@/context/CartContext";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const PurchaseCompleted = ({ grandTotalPrice }) => {
   const { cartItems, removeAllItems } = useCart();
+  const navigate = useRouter();
+
+  const handleComplete = (e) => {
+    e.preventDefault();
+    navigate.push("/");
+
+    setTimeout(() => {
+      removeAllItems();
+    }, 1000);
+  };
   return (
     <div className={styles.overlay}>
       <div className={styles.modalWindow}>
@@ -56,9 +65,9 @@ const PurchaseCompleted = ({ grandTotalPrice }) => {
             </div>
           </div>
         </div>
-        <Link href={"/"} className={styles.backToHomeButton}>
+        <button onClick={handleComplete} className={styles.backToHomeButton}>
           Back To Home
-        </Link>
+        </button>
       </div>
     </div>
   );

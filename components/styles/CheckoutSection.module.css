@@ -273,3 +273,9 @@
 .completePurchaseButton:hover {
   background-color: #fbaf85;
 }
+
+.toastStyle {
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: bold;
+}
