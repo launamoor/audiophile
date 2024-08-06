@@ -22,22 +22,20 @@ const SpeakersSection = () => {
             <ProductFlex
               newProduct={true}
               order={1}
-              title={speakers[1].name}
-              description={speakers[1].description}
-              imagePath={speakers[1].image.desktop}
+              productDetails={speakers[1]}
               seeProductButton={true}
-              cart={false}
-              productNumber={speakers[1].id}
+              imagePath={speakers[1].categoryImage.desktop}
+              imageTablet={speakers[1].categoryImage.tablet}
+              imageMobile={speakers[1].categoryImage.mobile}
             />
             <ProductFlex
               newProduct={false}
               order={0}
-              title={speakers[0].name}
-              description={speakers[0].description}
-              imagePath={speakers[0].image.desktop}
+              productDetails={speakers[0]}
               seeProductButton={true}
-              cart={false}
-              productNumber={speakers[0].id}
+              imagePath={speakers[0].categoryImage.desktop}
+              imageTablet={speakers[0].categoryImage.tablet}
+              imageMobile={speakers[0].categoryImage.mobile}
             />
           </div>
         </div>

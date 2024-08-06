@@ -22,29 +22,29 @@ const HeadphonesMark2Section = () => {
             <ProductFlex
               newProduct={true}
               order={1}
-              title={headphones[2].name}
-              description={headphones[2].description}
-              imagePath={headphones[2].image.desktop}
+              productDetails={headphones[2]}
               seeProductButton={true}
-              productNumber={headphones[2].id}
+              imagePath={headphones[2].categoryImage.desktop}
+              imageTablet={headphones[2].categoryImage.tablet}
+              imageMobile={headphones[2].categoryImage.mobile}
             />
             <ProductFlex
               newProduct={false}
               order={0}
-              title={headphones[1].name}
-              description={headphones[1].description}
-              imagePath={headphones[1].image.desktop}
+              productDetails={headphones[1]}
               seeProductButton={true}
-              productNumber={headphones[1].id}
+              imagePath={headphones[1].categoryImage.desktop}
+              imageTablet={headphones[1].categoryImage.tablet}
+              imageMobile={headphones[1].categoryImage.mobile}
             />
             <ProductFlex
               newProduct={false}
               order={1}
-              title={headphones[0].name}
-              description={headphones[0].description}
-              imagePath={headphones[0].image.desktop}
+              productDetails={headphones[0]}
               seeProductButton={true}
-              productNumber={headphones[0].id}
+              imagePath={headphones[0].categoryImage.desktop}
+              imageTablet={headphones[0].categoryImage.tablet}
+              imageMobile={headphones[0].categoryImage.mobile}
             />
           </div>
         </div>

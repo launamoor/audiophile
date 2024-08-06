@@ -9,7 +9,9 @@
 .imgDiv {
   overflow: hidden;
   border-radius: 8px;
-  max-width: 35rem;
+  min-width: 35rem;
+  min-height: 31.8rem;
+  position: relative;
 }
 
 .buttonDiv:link,
@@ -28,4 +30,14 @@
 
 .buttonDiv:hover {
   background-color: #fbaf85;
+}
+
+@media screen and (max-width: 75em) {
+  .imgDiv {
+    overflow: hidden;
+    border-radius: 8px;
+    min-width: 24rem;
+    min-height: 32rem;
+    position: relative;
+  }
 }

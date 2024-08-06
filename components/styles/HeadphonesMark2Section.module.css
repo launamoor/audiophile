@@ -26,3 +26,9 @@
   justify-content: center;
   gap: 16rem;
 }
+
+@media screen and (max-width: 75em) {
+  .container {
+    margin-inline: 5rem;
+  }
+}

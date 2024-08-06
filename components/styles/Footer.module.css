@@ -1,6 +1,7 @@
 .outerWrapper {
   background-color: #101010;
   padding-top: 7.5rem;
+  position: relative;
 }
 
 .container {
@@ -111,4 +112,24 @@
 
 .socialButton:hover img {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 75em) {
+  .container {
+    margin-inline: 5rem;
+  }
+  .navigationFlex {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3.2rem;
+  }
+  .socialNavList {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+  }
+  .description {
+    width: 100%;
+  }
 }

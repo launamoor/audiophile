@@ -10,13 +10,7 @@ const YouMayAlsoLike = ({ product }) => {
   return (
     <div className={styles.outerWrapper}>
       <div className={styles.imgDiv}>
-        <Image
-          width={350}
-          height={318}
-          style={{ width: "100%", height: "auto" }}
-          alt={toProduct[0].name}
-          src={product.image.desktop}
-        />
+        <Image fill alt={toProduct[0].name} src={product.image.desktop} />
       </div>
       <h5 className={styles.title}>{product.name}</h5>
       <Link href={`/product/${toProduct[0].id}`} className={styles.buttonDiv}>

@@ -38,26 +38,21 @@ const ProductSection = ({
         <div className={styles.galleryGrid}>
           <div className={styles.gridCell1}>
             <Image
-              width={500}
-              height={300}
-              style={{ width: "100%", height: "auto" }}
+              fill
               src={gallery.first.desktop}
               alt="Product's grid image"
             />
           </div>
           <div className={styles.gridCell2}>
             <Image
-              width={500}
-              height={300}
-              style={{ width: "100%", height: "auto" }}
+              fill
               src={gallery.second.desktop}
               alt="Product's grid image"
             />
           </div>
           <div className={styles.gridCell3}>
             <Image
-              width={635}
-              height={592}
+              fill
               src={gallery.third.desktop}
               alt="Product's grid image"
             />

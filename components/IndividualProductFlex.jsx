@@ -2,14 +2,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/components/styles/ProductFlex.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductFlex = ({
+const IndividualProductFlex = ({
   newProduct,
   order,
-  seeProductButton,
   cart,
   handleIncreaseQuantity,
   handleDecreaseQuantity,
@@ -18,7 +16,8 @@ const ProductFlex = ({
   imagePath,
   imageTablet,
   imageMobile,
-  productDetails,
+  product,
+  itemQuantity,
 }) => {
   const [currentImage, setCurrentImage] = useState(imagePath);
   const [currentWidth, setCurrentWidth] = useState(
@@ -33,6 +32,8 @@ const ProductFlex = ({
 
     window.addEventListener("resize", () => setCurrentWidth(window.innerWidth));
 
+    console.log(currentImage);
+
     return () =>
       window.removeEventListener("resize", () =>
         setCurrentWidth(window.innerWidth)
@@ -41,11 +42,11 @@ const ProductFlex = ({
 
   const handleAddToCart = () => {
     const itemToCart = {
-      id: productDetails.id,
-      name: productDetails.name,
-      image: productDetails.cartImage,
-      price: productDetails.price,
-      quantity: productDetails.cartQuantity + itemQuantity,
+      id: product.id,
+      name: product.name,
+      image: product.cartImage,
+      price: product.price,
+      quantity: product.cartQuantity + itemQuantity,
     };
 
     if (cartItems.some((item) => item.id === product.id)) {
@@ -64,16 +65,9 @@ const ProductFlex = ({
     <div className={styles.outerWrapper}>
       <div style={{ order: `${order}` }} className={styles.textboxDiv}>
         {newProduct && <p className={styles.newParagraph}>New Product</p>}
-        <h2 className={styles.title}>{productDetails.name}</h2>
-        <p className={styles.description}>{productDetails.description}</p>
-        {seeProductButton && (
-          <Link
-            href={`/product/${productDetails.id}`}
-            className={styles.button}
-          >
-            See Product
-          </Link>
-        )}
+        <h2 className={styles.title}>{product.name}</h2>
+        <p className={styles.description}>{product.description}</p>
+
         {cart && (
           <div>
             <div className={styles.price}>${product.price}</div>
@@ -109,7 +103,7 @@ const ProductFlex = ({
           width={540}
           height={560}
           src={currentImage}
-          alt={productDetails.name}
+          alt={product.name}
         />
       </div>
       <ToastContainer
@@ -127,4 +121,4 @@ const ProductFlex = ({
   );
 };
 
-export default ProductFlex;
+export default IndividualProductFlex;

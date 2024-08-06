@@ -1,4 +1,5 @@
-.outerWrapper {
+.outerWrapper,
+.outerWrapperProduct {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,14 +56,16 @@
   background-color: #fbaf85;
 }
 
-.imageDiv {
+.imageDiv,
+.imageDivProduct {
   max-width: 54rem;
   max-height: 56rem;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.imageDiv img {
+.imageDiv img,
+.imageDivProduct img {
   height: 100%;
   width: 100%;
 }
@@ -158,23 +161,34 @@
 
 @media screen and (max-width: 75em) {
   .outerWrapper {
-    justify-content: space-between;
-    gap: 2rem;
     flex-direction: column;
+    justify-content: center;
+    gap: 5.2rem;
   }
   .textboxDiv {
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 67%;
     order: 1 !important;
   }
+  .title {
+    text-align: center;
+  }
   .description {
-    width: 80%;
+    width: 100%;
     text-align: center;
   }
   .imageDiv {
     max-width: none;
     max-height: none;
-    width: 100%;
+    min-height: 35rem;
+    min-width: 100%;
+  }
+
+  .imageDivProduct {
+    max-width: 28rem;
+    min-height: 48rem;
+    border-radius: 8px;
+    overflow: hidden;
   }
 }

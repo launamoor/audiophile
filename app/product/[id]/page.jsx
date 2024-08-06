@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import CategoriesFlex from "@/components/CategoriesFlex";
-import ProductFlex from "@/components/ProductFlex";
+import IndividualProductFlex from "@/components/IndividualProductFlex";
 import { requestProduct } from "@/utils/requests";
 import ProductSection from "@/components/ProductSection";
 import { useCart } from "@/context/CartContext";
@@ -32,7 +32,7 @@ const ProductPage = () => {
         gallery={product[0].gallery}
         others={product[0].others}
       >
-        <ProductFlex
+        <IndividualProductFlex
           handleIncreaseQuantity={handleIncreaseQuantity}
           handleDecreaseQuantity={handleDecreaseQuantity}
           newProduct={product[0].new}
@@ -40,7 +40,8 @@ const ProductPage = () => {
           title={product[0].name}
           description={product[0].description}
           imagePath={product[0].image.desktop}
-          seeProductButton={false}
+          imageTablet={product[0].image.tablet}
+          imageMobile={product[0].image.mobile}
           cart={true}
           price={new Intl.NumberFormat().format(product[0].price)}
           product={product[0]}

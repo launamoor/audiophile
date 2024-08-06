@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "@/components/styles/EarphonesSection.module.css";
 import ProductFlex from "./ProductFlex";
@@ -8,6 +9,7 @@ const EarphonesSection = () => {
   const earphones = products.filter(
     (product) => product.category === "earphones"
   );
+
   return (
     <div>
       <div className={styles.titleOuterWrapper}>
@@ -21,11 +23,11 @@ const EarphonesSection = () => {
             <ProductFlex
               newProduct={true}
               order={1}
-              title={earphones[0].name}
-              description={earphones[0].description}
-              imagePath={earphones[0].image.desktop}
+              productDetails={earphones[0]}
               seeProductButton={true}
-              productNumber={earphones[0].id}
+              imagePath={earphones[0].categoryImage.desktop}
+              imageTablet={earphones[0].categoryImage.tablet}
+              imageMobile={earphones[0].categoryImage.mobile}
             />
           </div>
         </div>
