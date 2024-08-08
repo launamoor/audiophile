@@ -11,10 +11,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.headerDiv {
+.headerDiv,
+.dekstopMenu {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.dekstopMenu {
+  width: 100%;
 }
 
 .navList {
@@ -23,6 +28,12 @@
   justify-content: center;
   list-style: none;
   gap: 3.4rem;
+}
+
+.navListMobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navButton:link,
@@ -45,7 +56,8 @@
   color: #d87d4a;
 }
 
-.cartButton {
+.cartButton,
+.menuButton {
   display: inline-block;
   background-color: inherit;
   border: none;
@@ -56,5 +68,11 @@
 @media screen and (max-width: 75em) {
   .container {
     margin-inline: 5rem;
+  }
+}
+
+@media screen and (max-width: 53em) {
+  .container {
+    margin-inline: 2rem;
   }
 }

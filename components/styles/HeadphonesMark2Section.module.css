@@ -32,3 +32,9 @@
     margin-inline: 5rem;
   }
 }
+
+@media screen and (max-width: 53em) {
+  .container {
+    margin-inline: 2rem;
+  }
+}

@@ -122,3 +122,22 @@
     width: 85%;
   }
 }
+
+@media screen and (max-width: 53em) {
+  .heroText {
+    width: 75%;
+  }
+  .heroTextbox {
+    width: 100%;
+  }
+  .innerWrapper {
+    width: 100%;
+    gap: 0;
+  }
+  .heroNewProduct {
+    text-wrap: nowrap;
+  }
+  .container {
+    margin-inline: 2rem;
+  }
+}

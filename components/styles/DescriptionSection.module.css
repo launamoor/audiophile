@@ -73,3 +73,25 @@
     line-height: 25px;
   }
 }
+
+@media screen and (max-width: 53em) {
+  .imgDiv {
+    background-image: url("../../assets/images/shared/mobile/image-best-gear.jpg");
+  }
+  .title {
+    width: 100%;
+  }
+  .description {
+    width: 100%;
+  }
+  .imgDiv {
+    min-width: 33rem;
+    min-height: 30rem;
+  }
+}
+
+@media screen and (max-width: 53em) {
+  .container {
+    margin-inline: 2rem;
+  }
+}

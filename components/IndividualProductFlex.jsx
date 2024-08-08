@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "@/components/styles/ProductFlex.module.css";
+import styles from "@/components/styles/IndividualProductFlex.module.css";
 import Image from "next/image";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -98,13 +98,7 @@ const IndividualProductFlex = ({
         )}
       </div>
       <div className={styles.imageDiv}>
-        <Image
-          priority
-          width={540}
-          height={560}
-          src={currentImage}
-          alt={product.name}
-        />
+        <Image priority fill src={currentImage} alt={product.name} />
       </div>
       <ToastContainer
         position="top-right"

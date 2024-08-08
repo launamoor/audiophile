@@ -14,7 +14,7 @@ const Footer = () => {
         <div className={styles.innerWrapper}>
           <div className={styles.navigationFlex}>
             <Image src={logo} alt="Logo" />
-            <nav>
+            <nav className={styles.navDiv}>
               <ul className={styles.navList}>
                 <li>
                   <Link href={"/"} className={styles.navButton}>
