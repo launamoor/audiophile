@@ -178,3 +178,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 53em) {
+  .title {
+    margin-bottom: 1.6rem;
+  }
+}
