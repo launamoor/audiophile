@@ -185,3 +185,15 @@
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 37em) {
+  .outerWrapper {
+    top: 9%;
+    right: 5%;
+    left: 5%;
+  }
+  .textboxTitle {
+    text-align: start;
+    line-height: 15px;
+  }
+}

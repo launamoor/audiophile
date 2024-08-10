@@ -279,3 +279,72 @@
   font-family: inherit;
   font-weight: bold;
 }
+
+@media screen and (max-width: 75em) {
+  .container {
+    margin-inline: 5rem;
+  }
+
+  .innerWrapper {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .checkoutWrapper {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .summaryWrapper {
+    flex-basis: 100%;
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .billingGrid,
+  .paymentDetailsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 2.4rem;
+  }
+  .shippingGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .paymentDetailsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .paymentTitle {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .paymentRadioOne {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .paymentRadioTwo {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .label {
+    padding-left: 6rem;
+    text-wrap: nowrap;
+  }
+  .pinGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    row-gap: 1.6rem;
+  }
+  .customRadioOne,
+  .customRadioTwo {
+    top: 50%;
+    left: 8%;
+  }
+}

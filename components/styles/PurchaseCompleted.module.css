@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 .modalWindow {
@@ -22,6 +23,7 @@
   overflow: hidden;
   border-radius: 8px;
   min-width: 35vw;
+  position: relative;
 }
 
 .modalText {
@@ -143,4 +145,21 @@
 
 .backToHomeButton:hover {
   background-color: #fbaf85;
+}
+
+@media screen and (max-width: 37em) {
+  .summaryDiv {
+    flex-direction: column;
+  }
+  .summaryItems {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+  }
+  .summaryTotal {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0;
+    padding: 3.2rem;
+  }
 }
