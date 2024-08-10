@@ -4,9 +4,13 @@ import iconArrowRight from "@/assets/images/shared/desktop/icon-arrow-right.svg"
 import Image from "next/image";
 import Link from "next/link";
 
-const CategoryButton = ({ image, category }) => {
+const CategoryButton = ({ image, category, onClick }) => {
   return (
-    <Link href={`/${category.toLowerCase()}`} className={styles.button}>
+    <Link
+      href={`/${category.toLowerCase()}`}
+      onClick={onClick}
+      className={styles.button}
+    >
       <div className={styles.buttonFlex}>
         <div className={styles.buttonImgDiv}>
           <Image className={styles.buttonImg} src={image} alt={category} />

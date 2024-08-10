@@ -165,6 +165,7 @@
   .textboxDiv {
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     order: 1 !important;
   }

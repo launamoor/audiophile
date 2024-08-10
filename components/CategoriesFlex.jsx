@@ -5,14 +5,26 @@ import headphones from "@/assets/images/shared/desktop/image-category-thumbnail-
 import speakers from "@/assets/images/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "@/assets/images/shared/desktop/image-category-thumbnail-earphones.png";
 
-const CategoriesFlex = () => {
+const CategoriesFlex = ({ style, layout, mobileView, handleToggle }) => {
   return (
-    <section className={styles.outerWrapper}>
+    <section style={style} className={styles.outerWrapper}>
       <div className={styles.container}>
-        <div className={styles.innerWrapper}>
-          <CategoryButton image={headphones} category={"Headphones"} />
-          <CategoryButton image={speakers} category={"Speakers"} />
-          <CategoryButton image={earphones} category={"Earphones"} />
+        <div style={layout} className={styles.innerWrapper}>
+          <CategoryButton
+            onClick={mobileView ? handleToggle : null}
+            image={headphones}
+            category={"Headphones"}
+          />
+          <CategoryButton
+            onClick={mobileView ? handleToggle : null}
+            image={speakers}
+            category={"Speakers"}
+          />
+          <CategoryButton
+            onClick={mobileView ? handleToggle : null}
+            image={earphones}
+            category={"Earphones"}
+          />
         </div>
       </div>
     </section>

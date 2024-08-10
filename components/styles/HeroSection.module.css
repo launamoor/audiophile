@@ -42,6 +42,7 @@
   text-transform: uppercase;
   color: #fff;
   opacity: 0.5;
+  text-wrap: nowrap;
 }
 
 .heroTitle {
@@ -97,14 +98,15 @@
 
   .outerWrapper {
     background-color: #000;
-    min-height: 90vh;
+    min-height: 80vh;
     margin-bottom: 12rem;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.3) 0%,
         rgba(0, 0, 0, 0.3) 100%
       ),
       url("../../public/images/home/tablet/image-header.jpg");
-    background-position: bottom;
+    background-position: center;
+    background-size: 100% 100%;
   }
 
   .innerWrapper {
@@ -119,25 +121,25 @@
   }
 
   .heroText {
-    width: 85%;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 53em) {
-  .heroText {
-    width: 75%;
+}
+
+@media screen and (max-width: 36em) {
+  .outerWrapper {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      url("../../public/images/home/mobile/image-header.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    min-height: 75vh;
   }
   .heroTextbox {
     width: 100%;
-  }
-  .innerWrapper {
-    width: 100%;
-    gap: 0;
-  }
-  .heroNewProduct {
-    text-wrap: nowrap;
-  }
-  .container {
-    margin-inline: 2rem;
   }
 }

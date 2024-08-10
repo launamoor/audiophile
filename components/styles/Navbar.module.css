@@ -11,6 +11,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.containerMobile {
+  max-width: 111rem;
+  margin: 0 auto;
+  padding: 3.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .headerDiv,
 .dekstopMenu {
   display: flex;
@@ -34,6 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 5rem;
 }
 
 .navButton:link,

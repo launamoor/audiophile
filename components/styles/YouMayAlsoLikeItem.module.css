@@ -42,3 +42,18 @@
     position: relative;
   }
 }
+
+@media screen and (max-width: 48em) {
+  .imgDiv {
+    min-width: 24rem;
+    min-height: 32rem;
+  }
+  .innerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+}

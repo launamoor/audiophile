@@ -9,8 +9,10 @@ const YouMayAlsoLike = ({ product }) => {
   const toProduct = products.filter((item) => item.slug === product.slug);
   return (
     <div className={styles.outerWrapper}>
-      <div className={styles.imgDiv}>
-        <Image fill alt={toProduct[0].name} src={product.image.desktop} />
+      <div className={styles.innerWrapper}>
+        <div className={styles.imgDiv}>
+          <Image fill alt={toProduct[0].name} src={product.image.desktop} />
+        </div>
       </div>
       <h5 className={styles.title}>{product.name}</h5>
       <Link href={`/product/${toProduct[0].id}`} className={styles.buttonDiv}>
