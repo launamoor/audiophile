@@ -248,7 +248,7 @@ const CheckoutSection = () => {
                     <div className={styles.thumbnail}>
                       <Image
                         src={item.image}
-                        alt="asd"
+                        alt={item.name}
                         width={64}
                         height={64}
                       />

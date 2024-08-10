@@ -186,8 +186,8 @@
 }
 
 .thumbnail {
-  max-height: 6.4rem;
-  max-width: 6.4rem;
+  max-height: none;
+  max-width: none;
   overflow: hidden;
   border-radius: 8px;
 }
