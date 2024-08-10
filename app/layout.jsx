@@ -7,8 +7,11 @@ import { CartProvider } from "@/context/CartContext";
 import React from "react";
 
 export const metadata = {
-  title: "Audiophile",
+  title: "Audiophile || Bart Jozef",
   description: "Audiophile",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 const MainLayout = ({ children }) => {

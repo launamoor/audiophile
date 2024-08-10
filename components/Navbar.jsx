@@ -17,7 +17,7 @@ const Navbar = () => {
   const { cartOpen, openCart, closeCart } = useCart();
 
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(1400);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
