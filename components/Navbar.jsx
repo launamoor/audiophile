@@ -16,7 +16,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const { cartOpen, openCart, closeCart } = useCart();
 
-  const [mobileMenu, setMobileMenu] = useState(true);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [windowWidth, setWindowWidth] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
